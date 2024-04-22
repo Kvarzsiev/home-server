@@ -6,7 +6,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - $HOME/.config/homepage/config:/app/config # Make sure your local config directory exists
-      - $HOME/.config/homepage/images:/app/public/images # for background image conf
+      - /home/kvarzsiev/.config/homepage/config:/app/config # Make sure your local config directory exists
+      - /home/kvarzsiev/.config/homepage/images:/app/public/images # for background image conf
       - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
     restart: unless-stopped
