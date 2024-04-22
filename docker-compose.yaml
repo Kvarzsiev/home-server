@@ -27,3 +27,17 @@ services:
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /home/kvarzsiev/.config/radarr/config:/config
+      - /home/kvarzsiev/movies #optional
+      - /home/kvarzsiev/downloads:/downloads #optional
+    ports:
+      - 7878:7878
+    restart: unless-stopped
